@@ -1170,6 +1170,11 @@ vue-demi@>=0.14.5, vue-demi@>=0.14.6:
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.6.tgz#dc706582851dc1cdc17a0054f4fec2eb6df74c92"
   integrity sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==
 
+vue-remix-icons@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/vue-remix-icons/-/vue-remix-icons-3.5.0.tgz#14d0c80d86842fc7946e44a63e1feaa36df3800a"
+  integrity sha512-Wn8j9rFC0oFleoA+sepYixd3O0PcwRFY7PuJPDlxh39zktLkTyDfrr3MZz8VMniktrHTN+8vddLC2iF7sYHZ8Q==
+
 vue-router@4:
   version "4.2.5"
   resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.2.5.tgz"
