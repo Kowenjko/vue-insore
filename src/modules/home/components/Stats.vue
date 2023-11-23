@@ -14,9 +14,9 @@ const stats: StatsI[] = [
 <template>
 	<section class="py-10 xl:py-36">
 		<div class="container mx-auto">
-			<ul class="flex flex-col md:flex-row gap-6 justify-between">
+			<ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 				<li
-					class="flex-1 border-r border-r-grey flex flex-col items-center last:border-none"
+					class="flex-1 border-r-grey flex flex-col items-center md:odd:border-r lg:even:border-r lg:last:border-none"
 					v-for="stat in stats"
 					:key="stat.title"
 				>

@@ -27,7 +27,7 @@ import { RiHeartPulseLine } from 'vue-remix-icons'
 					<Button size="lg" class="mx-auto xl:mx-0">Contact us</Button>
 				</div>
 				<div class="hidden xl:flex max-w-[814px] self-end">
-					<img src="/public/img/hero/img.png" alt="hero" />
+					<img src="/img/hero/img.png" alt="hero" />
 				</div>
 			</div>
 		</div>
