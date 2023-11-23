@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import Button from '@/components/UI/Button.vue'
+import Hero from '@/modules/home/components/Hero.vue'
+import Stats from '@/modules/home/components/Stats.vue'
 </script>
 
 <template>
-	<div class="max-w-5xl mx-auto">
-		<h1 class="text-3xl font-bold underline font-primary">Hello world!</h1>
-		<Button>Test</Button>
-	</div>
+	<Hero />
+	<Stats />
 </template>
 
 <style scoped></style>

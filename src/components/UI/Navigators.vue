@@ -34,7 +34,7 @@ const routes: RoutesI[] = [
 
 <template>
 	<ul>
-		<li v-for="link in routes" :key="link.title">
+		<li v-for="link in routes" :key="link.title" class="">
 			<router-link
 				class="text-secondary hover:text-accent transition-all"
 				:to="link.url"
