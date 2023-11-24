@@ -17,6 +17,7 @@ const props = defineProps<Props>()
 const emitter = inject<any>('event')
 const emit = defineEmits<{
 	'update:selected': [value: OptionsI]
+	close: []
 }>()
 
 const isOpen = ref(false)
@@ -26,13 +27,17 @@ const closeDropdown = () => (isOpen.value = false)
 
 emitter.on('clicked', closeDropdown)
 
+const clickHandler = () => {
+	isOpen.value = !isOpen.value
+	emit('close')
+}
 defineExpose({ closeDropdown })
 watch(defaultSelect, (value: any) => emit('update:selected', value))
 </script>
 <template>
 	<div class="relative w-full">
 		<button
-			@click.stop="isOpen = !isOpen"
+			@click.stop="clickHandler"
 			type="button"
 			class="border border-[#dbdfdf] text-secondary rounded-lg text-sm w-full relative"
 		>

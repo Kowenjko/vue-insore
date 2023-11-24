@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import SelectField from '@/components/UI/SelectField.vue'
 import TextField from '@/components/UI/TextField.vue'
 import Button from '@/components/UI/Button.vue'
@@ -36,6 +36,9 @@ const form = reactive<FormI>({
 	date: '',
 	time: '',
 })
+
+const departmentRef = ref<InstanceType<typeof SelectField> | null>(null)
+const doctorRef = ref<InstanceType<typeof SelectField> | null>(null)
 </script>
 <template>
 	<section class="py-10 xl:py-36">
@@ -48,11 +51,15 @@ const form = reactive<FormI>({
 			<form @submit.prevent="" class="flex flex-col gap-5">
 				<div class="flex flex-col xl:flex-row gap-5">
 					<SelectField
+						@close="doctorRef.closeDropdown()"
+						ref="departmentRef"
 						placeholder="Select department"
 						:options="departments"
 						v-model:selected="form.department"
 					/>
 					<SelectField
+						@close="departmentRef.closeDropdown()"
+						ref="doctorRef"
 						placeholder="Select Doctor"
 						:options="doctors"
 						v-model:selected="form.doctor"
