@@ -7,6 +7,7 @@ import Testimonials from '@/modules/home/components/Testimonials.vue'
 import Team from '@/modules/home/components/Team.vue'
 import Faq from '@/modules/home/components/Faq.vue'
 import Departments from '@/modules/home/components/Departments.vue'
+import Blog from '@/modules/home/components/Blog.vue'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import Departments from '@/modules/home/components/Departments.vue'
 	<Team />
 	<Faq />
 	<Departments />
+	<Blog />
 </template>
 
 <style scoped></style>
