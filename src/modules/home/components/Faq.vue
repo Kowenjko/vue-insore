@@ -34,7 +34,7 @@ const faqs: FaqsI[] = [
 ]
 </script>
 <template>
-	<section class="mt-10">
+	<section class="my-20 xl:my-40">
 		<div class="container mx-auto">
 			<h2 class="h2 text-center mb-12">We've got answer</h2>
 			<Accordion :accordions="faqs" />
