@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css/bundle'
-import 'swiper/css'
-
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
+import Sliders from '@/components/UI/Sliders.vue'
 
 const testimonials = [
 	{
@@ -38,49 +32,36 @@ const testimonials = [
 					<img src="/img/testimonials/img.png" alt="testimonials" />
 				</div>
 				<div class="max-w-[98%] xl:max-w-[710px]">
-					<swiper
-						:modules="[Pagination, Autoplay]"
-						:space-between="30"
-						:pagination="{ clickable: true }"
-						:loop="true"
-						:autoplay="{
-							delay: 2500,
-							disableOnInteraction: false,
-						}"
-						class="h-[400px]"
-					>
-						<swiper-slide
-							class="h-full"
-							v-for="(testimonial, index) in testimonials"
-							:key="index"
-						>
-							<div class="h-full flex flex-col justify-center items-start">
-								<div class="max-w-[680px] mx-auto text-centers xl:text-left">
-									<p
-										class="font-light relative text-xl text-[#4c5354] leading-[190%] text-center xl:text-left before:bg-quoteLeft before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-10 before:h-10 before:bg-no-repeat after:bg-quoteRight after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-10 after:h-10 after:bg-no-repeat mb-7"
-									>
-										<span class="mx-2"> {{ testimonial.description }} </span>
-									</p>
-									<h3 class="text-2xl text-[#4c5354] font-semibold">
-										{{ testimonial.title }}
-									</h3>
-									<h4
-										class="text-[#9ab4b7] font-medium uppercase tracking-[2.24px]"
-									>
-										{{ testimonial.user }}
-									</h4>
-								</div>
+					<Sliders :sliders="testimonials" v-slot="{ slider }">
+						<div class="h-full flex flex-col justify-center items-start">
+							<div class="max-w-[680px] mx-auto text-centers xl:text-left">
+								<p
+									class="font-light relative text-xl text-[#4c5354] leading-[190%] text-center xl:text-left before:bg-quoteLeft before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-10 before:h-10 before:bg-no-repeat after:bg-quoteRight after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-10 after:h-10 after:bg-no-repeat mb-7"
+								>
+									<span class="mx-2"> {{ slider.description }} </span>
+								</p>
+								<h3 class="text-2xl text-[#4c5354] font-semibold">
+									{{ slider.title }}
+								</h3>
+								<h4
+									class="text-[#9ab4b7] font-medium uppercase tracking-[2.24px]"
+								>
+									{{ slider.user }}
+								</h4>
 							</div>
-						</swiper-slide>
-					</swiper>
+						</div>
+					</Sliders>
 				</div>
 			</div>
 		</div>
 	</section>
 </template>
 
-<style scoped>
+<style lang="scss">
 .swiper-pagination {
-	@apply text-left;
+	@apply text-left pl-5 space-x-2.5;
+	&-bullet {
+		@apply h-2.5 w-2.5;
+	}
 }
 </style>

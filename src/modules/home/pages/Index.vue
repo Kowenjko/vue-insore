@@ -4,6 +4,7 @@ import Stats from '@/modules/home/components/Stats.vue'
 import Services from '@/modules/home/components/Services.vue'
 import Appointment from '@/modules/home/components/Appointment.vue'
 import Testimonials from '@/modules/home/components/Testimonials.vue'
+import Team from '@/modules/home/components/Team.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Testimonials from '@/modules/home/components/Testimonials.vue'
 	<Services />
 	<Appointment />
 	<Testimonials />
+	<Team />
 </template>
 
 <style scoped></style>
