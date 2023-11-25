@@ -8,6 +8,7 @@ import Team from '@/modules/home/components/Team.vue'
 import Faq from '@/modules/home/components/Faq.vue'
 import Departments from '@/modules/home/components/Departments.vue'
 import Blog from '@/modules/home/components/Blog.vue'
+import Brands from '@/modules/home/components/Brands.vue'
 </script>
 
 <template>
@@ -20,6 +21,7 @@ import Blog from '@/modules/home/components/Blog.vue'
 	<Faq />
 	<Departments />
 	<Blog />
+	<Brands />
 </template>
 
 <style scoped></style>
