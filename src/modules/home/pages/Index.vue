@@ -9,6 +9,7 @@ import Faq from '@/modules/home/components/Faq.vue'
 import Departments from '@/modules/home/components/Departments.vue'
 import Blog from '@/modules/home/components/Blog.vue'
 import Brands from '@/modules/home/components/Brands.vue'
+import NewsLetter from '@/modules/home/components/NewsLetter.vue'
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import Brands from '@/modules/home/components/Brands.vue'
 	<Departments />
 	<Blog />
 	<Brands />
+	<NewsLetter />
 </template>
 
 <style scoped></style>
