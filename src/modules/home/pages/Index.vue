@@ -5,6 +5,7 @@ import Services from '@/modules/home/components/Services.vue'
 import Appointment from '@/modules/home/components/Appointment.vue'
 import Testimonials from '@/modules/home/components/Testimonials.vue'
 import Team from '@/modules/home/components/Team.vue'
+import Faq from '@/modules/home/components/Faq.vue'
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import Team from '@/modules/home/components/Team.vue'
 	<Appointment />
 	<Testimonials />
 	<Team />
+	<Faq />
 </template>
 
 <style scoped></style>

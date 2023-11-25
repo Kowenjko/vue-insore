@@ -10,7 +10,7 @@ import 'swiper/css/navigation'
 interface Props {
 	sliders: any
 	slidesPerView?: number
-	positionPagination: string
+	positionPagination?: string
 }
 
 withDefaults(defineProps<Props>(), {

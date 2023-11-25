@@ -7,6 +7,9 @@ import { useWindowSize } from '@vueuse/core'
 const { width } = useWindowSize()
 
 const slidesPerView = computed(() => (width.value > 1330 ? 2 : 1))
+const positionPagination = computed<string>(() =>
+	width.value > 1330 ? 'center' : 'right'
+)
 
 const doctors = [
 	{
@@ -49,7 +52,7 @@ const doctors = [
 					:sliders="doctors"
 					v-slot="{ slider }"
 					:slides-per-view="slidesPerView"
-					positionPagination="center"
+					:positionPagination="positionPagination"
 				>
 					<div class="flex flex-col xl:flex-row">
 						<div class="flex flex-col xl:flex-row items-center gap-8">
