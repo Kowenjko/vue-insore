@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-	<section class="xl:my-32">
+	<section class="my-12 xl:my-32">
 		<div
 			class="container mx-auto flex flex-col xl:flex-row items-center gap-y-12 xl:justify-between"
 		>
