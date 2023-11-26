@@ -63,14 +63,14 @@ const doctorRef = ref<InstanceType<typeof SelectField> | null>(null)
 			>
 				<div class="flex flex-col xl:flex-row gap-5">
 					<SelectField
-						@close="doctorRef.closeDropdown()"
+						@close="doctorRef?.closeDropdown()"
 						ref="departmentRef"
 						placeholder="Select department"
 						:options="departments"
 						v-model:selected="form.department"
 					/>
 					<SelectField
-						@close="departmentRef.closeDropdown()"
+						@close="departmentRef?.closeDropdown()"
 						ref="doctorRef"
 						placeholder="Select Doctor"
 						:options="doctors"

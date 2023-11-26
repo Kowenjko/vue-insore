@@ -13,9 +13,12 @@
 		"skipLibCheck": true,
 		"noEmit": true,
 		"allowJs": true,
+		"noImplicitAny": false,
+		"allowImportingTsExtensions": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["src/*"]
+			"@/*": ["src/*"],
+			"composables/*": ["src/composables/*"]
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
