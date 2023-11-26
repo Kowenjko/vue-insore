@@ -4,13 +4,10 @@ import SelectField from '@/components/UI/SelectField.vue'
 import TextField from '@/components/UI/TextField.vue'
 import Button from '@/components/UI/Button.vue'
 
-import { createScrollRevealDirective } from 'vue-scroll-reveal'
-const vScrollReveal = createScrollRevealDirective({
-	origin: 'bottom',
-	distance: '100px',
-	delay: 300,
-	interval: 50,
-})
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+
+const { vScrollReveal } = useScrollReveal()
+
 interface OptionsI {
 	label: string
 	value: string

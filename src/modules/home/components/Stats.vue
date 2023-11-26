@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { createScrollRevealDirective } from 'vue-scroll-reveal'
-const vScrollReveal = createScrollRevealDirective({
-	origin: 'top',
-	distance: '100px',
-	delay: 600,
-	interval: 100,
-})
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
+
 interface StatsI {
 	count: string
 	title: string
@@ -23,7 +19,7 @@ const stats: StatsI[] = [
 		<div class="container mx-auto">
 			<ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 				<li
-					v-scroll-reveal
+					v-scroll-reveal.reset="{ origin: 'top' }"
 					class="flex-1 border-r-grey flex flex-col items-center md:odd:border-r lg:even:border-r lg:last:border-none"
 					v-for="stat in stats"
 					:key="stat.title"

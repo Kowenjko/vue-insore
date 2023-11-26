@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { RiAddFill, RiSubtractFill } from 'vue-remix-icons'
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
+
 interface FaqsI {
 	title: string
 	description: string
@@ -17,6 +20,7 @@ const items = ref(props.accordions)
 <template>
 	<div class="max-w-5xl mx-auto">
 		<div
+			v-scroll-reveal.reset
 			@click="item.active = !item.active"
 			class="px-8 pt-7 pb-4 border-b select-none cursor-pointer"
 			v-for="item in items"

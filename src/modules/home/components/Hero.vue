@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import Button from '@/components/UI/Button.vue'
 import { RiHeartPulseLine } from 'vue-remix-icons'
-import { createScrollRevealDirective } from 'vue-scroll-reveal'
-const vScrollReveal = createScrollRevealDirective({
-	origin: 'bottom',
-	distance: '60px',
-	delay: 300,
-	duration: 600,
-})
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
 </script>
 <template>
 	<section class="bg-grey overflow-hidden">

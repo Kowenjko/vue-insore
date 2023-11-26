@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { createScrollRevealDirective } from 'vue-scroll-reveal'
-const vScrollReveal = createScrollRevealDirective({
-	origin: 'bottom',
-	distance: '100px',
-	delay: 300,
-	interval: 50,
-})
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
+
 interface PostsI {
 	imgSrc: string
 	badge: string

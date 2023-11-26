@@ -2,12 +2,14 @@
 import Logo from '@/components/UI/Logo.vue'
 import { RiMapPinFill, RiMailFill, RiPhoneFill } from 'vue-remix-icons'
 import Socials from './UI/Socials.vue'
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
 </script>
 <template>
 	<footer class="pt-12 xl:pt-[150px]">
 		<div class="container mx-auto pb-12 xl:pb-26">
 			<div class="flex flex-col xl:flex-row gap-x-5 gap-y-10">
-				<div class="flex-1">
+				<div class="flex-1" v-scroll-reveal.reset>
 					<Logo />
 					<p class="my-5">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui tempora
@@ -29,7 +31,7 @@ import Socials from './UI/Socials.vue'
 					</div>
 					<Socials />
 				</div>
-				<div class="flex-1">
+				<div class="flex-1" v-scroll-reveal.reset>
 					<h4 class="h4 mb-5 text-center xl:text-left">Quick links</h4>
 					<div class="flex gap-5">
 						<ul class="flex-1 flex flex-col gap-5">
@@ -76,7 +78,7 @@ import Socials from './UI/Socials.vue'
 						</ul>
 					</div>
 				</div>
-				<div class="flex-1">
+				<div class="flex-1" v-scroll-reveal.reset>
 					<h4 class="h4 mb-5 text-center xl:text-left">Opening hours</h4>
 					<div class="flex flex-col gap-5">
 						<ul class="flex-1 space-y-5">

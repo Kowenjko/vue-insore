@@ -3,13 +3,8 @@ import { computed } from 'vue'
 import Sliders from '@/components/UI/Sliders.vue'
 import Socials from '@/components/UI/Socials.vue'
 import { useWindowSize } from '@vueuse/core'
-import { createScrollRevealDirective } from 'vue-scroll-reveal'
-const vScrollReveal = createScrollRevealDirective({
-	origin: 'bottom',
-	distance: '100px',
-	delay: 300,
-	interval: 50,
-})
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
 
 const { width } = useWindowSize()
 

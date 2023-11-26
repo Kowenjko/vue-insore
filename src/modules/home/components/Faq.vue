@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import Accordion from '@/components/UI/Accordion.vue'
-import { createScrollRevealDirective } from 'vue-scroll-reveal'
-const vScrollReveal = createScrollRevealDirective({
-	origin: 'bottom',
-	distance: '100px',
-	delay: 300,
-	interval: 50,
-})
+import { useScrollReveal } from '@/composables/useScrollReveal.ts'
+const { vScrollReveal } = useScrollReveal()
 
 interface FaqsI {
 	title: string
