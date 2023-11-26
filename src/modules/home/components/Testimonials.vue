@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import Sliders from '@/components/UI/Sliders.vue'
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
 
 const testimonials = [
 	{
@@ -25,6 +32,7 @@ const testimonials = [
 <template>
 	<section
 		class="bg-testimonials bg-cover bg-right bg-no-repeat py-12 xl:min-h-[595px] xl:py-0"
+		v-scroll-reveal.reset
 	>
 		<div class="container mx-auto">
 			<div class="flex flex-col items-center gap-x-14 xl:flex-row">

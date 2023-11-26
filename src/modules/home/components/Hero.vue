@@ -1,12 +1,22 @@
 <script setup lang="ts">
 import Button from '@/components/UI/Button.vue'
 import { RiHeartPulseLine } from 'vue-remix-icons'
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '60px',
+	delay: 300,
+	duration: 600,
+})
 </script>
 <template>
 	<section class="bg-grey overflow-hidden">
 		<div class="container mx-auto h-full">
 			<div class="flex flex-col xl:flex-row items-center justify-between">
-				<div class="xl:w-[48%] text-center xl:text-left mb-6 xl:mb-0">
+				<div
+					class="xl:w-[48%] text-center xl:text-left mb-6 xl:mb-0"
+					v-scroll-reveal.reset="{ origin: 'top' }"
+				>
 					<div
 						class="flex gap-4 items-center bg-white py-2 px-5 my-10 rounded-full max-w-[220px] mx-auto xl:mx-0 xl:mt-0"
 					>
@@ -26,7 +36,10 @@ import { RiHeartPulseLine } from 'vue-remix-icons'
 					</p>
 					<Button size="lg" class="mx-auto xl:mx-0">Contact us</Button>
 				</div>
-				<div class="hidden xl:flex max-w-[814px] self-end">
+				<div
+					class="hidden xl:flex max-w-[814px] self-end"
+					v-scroll-reveal.reset
+				>
 					<img src="/img/hero/img.png" alt="hero" />
 				</div>
 			</div>

@@ -3,6 +3,14 @@ import { reactive, ref } from 'vue'
 import SelectField from '@/components/UI/SelectField.vue'
 import TextField from '@/components/UI/TextField.vue'
 import Button from '@/components/UI/Button.vue'
+
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
 interface OptionsI {
 	label: string
 	value: string
@@ -43,12 +51,19 @@ const doctorRef = ref<InstanceType<typeof SelectField> | null>(null)
 <template>
 	<section class="py-10 xl:py-36">
 		<div class="container mx-auto">
-			<h2 class="h2 mb-5 xl:mb-[50px] text-center xl:text-left">
+			<h2
+				class="h2 mb-5 xl:mb-[50px] text-center xl:text-left"
+				v-scroll-reveal.reset
+			>
 				Book Appointment or call:
 				<span class="text-accent-tertiary"> (+487) 384 9452</span>
 			</h2>
 
-			<form @submit.prevent="" class="flex flex-col gap-5">
+			<form
+				@submit.prevent=""
+				class="flex flex-col gap-5"
+				v-scroll-reveal.reset
+			>
 				<div class="flex flex-col xl:flex-row gap-5">
 					<SelectField
 						@close="doctorRef.closeDropdown()"

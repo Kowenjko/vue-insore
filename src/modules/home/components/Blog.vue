@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
 interface PostsI {
 	imgSrc: string
 	badge: string
@@ -37,7 +44,9 @@ const posts: PostsI[] = [
 <template>
 	<section>
 		<div class="container mx-auto">
-			<h2 class="h2 mb-12 text-center xl:text-left">Our Recent Posts</h2>
+			<h2 class="h2 mb-12 text-center xl:text-left" v-scroll-reveal.reset>
+				Our Recent Posts
+			</h2>
 			<ul
 				class="flex flex-col xl:flex-row gap-y-6 xl:gap-y-0 items-center xl:justify-between mb-12"
 			>
@@ -45,6 +54,7 @@ const posts: PostsI[] = [
 					class="max-w-[420px] shadow-custom2 rounded-xl overflow-hidden cursor-pointer group"
 					v-for="post in posts"
 					:key="post.title"
+					v-scroll-reveal.reset
 				>
 					<div class="relative overflow-hidden">
 						<img

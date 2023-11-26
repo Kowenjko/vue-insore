@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
+
 interface ServicesI {
 	imgSrc: string
 	title: string
@@ -33,7 +41,7 @@ const services: ServicesI[] = [
 ]
 </script>
 <template>
-	<section>
+	<section v-scroll-reveal.reset>
 		<div
 			class="bg-services bg-cover bg-no-repeat max-w-[1466px] mx-4 xl:mx-auto rounded-[20px] xl:pt-16 px-6 xl:px-0 relative h-[368px] flex items-center xl:items-start -z-10"
 		>
@@ -60,6 +68,7 @@ const services: ServicesI[] = [
 					class="bg-white p-8 rounded-xl shadow-custom2 min-h-[288px] flex flex-col items-center text-center"
 					v-for="service in services"
 					:key="service.title"
+					v-scroll-reveal.reset
 				>
 					<div class="mb-[15px]">
 						<img :src="service.imgSrc" alt="service" />

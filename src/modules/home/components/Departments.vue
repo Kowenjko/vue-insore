@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import Tabs from '@/components/UI/Tabs.vue'
 import TabsItem from '@/components/UI/TabsItem.vue'
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
 
 interface TabI {
 	title: string
@@ -60,9 +67,9 @@ const departments: TabI[] = [
 			class="bg-departments bg-cover xl:bg-auto bg-center bg-no-repeat max-w-[1466px] mx-4 xl:mx-auto rounded-3xl px-6 xl:px-2 py-12 xl:pt-[80px] xl:pb-[90px] relative min-h-[588px] flex items-center"
 		>
 			<div class="container mx-auto">
-				<div class="flex flex-col xl:flex-row gap-x-5">
+				<div class="flex flex-col xl:flex-row gap-x-5" v-scroll-reveal.reset>
 					<Tabs :tabs="departments" v-slot="{ selectedTab }">
-						<TabsItem :tab="selectedTab" />
+						<TabsItem :tab="selectedTab" v-scroll-reveal.reset />
 					</Tabs>
 				</div>
 			</div>

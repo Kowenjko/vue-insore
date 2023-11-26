@@ -3,6 +3,13 @@ import { computed } from 'vue'
 import Sliders from '@/components/UI/Sliders.vue'
 import Socials from '@/components/UI/Socials.vue'
 import { useWindowSize } from '@vueuse/core'
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
 
 const { width } = useWindowSize()
 
@@ -45,9 +52,11 @@ const doctors = [
 <template>
 	<section>
 		<div class="container mx-auto">
-			<h2 class="h2 my-12 text-center xl:text-left">Our Team</h2>
+			<h2 class="h2 my-12 text-center xl:text-left" v-scroll-reveal.reset>
+				Our Team
+			</h2>
 
-			<div class="min-h-[400px]">
+			<div class="min-h-[400px]" v-scroll-reveal.reset>
 				<Sliders
 					:sliders="doctors"
 					v-slot="{ slider }"

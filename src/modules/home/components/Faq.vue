@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import Accordion from '@/components/UI/Accordion.vue'
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
+
 interface FaqsI {
 	title: string
 	description: string
@@ -36,8 +44,10 @@ const faqs: FaqsI[] = [
 <template>
 	<section class="my-20 xl:my-40">
 		<div class="container mx-auto">
-			<h2 class="h2 text-center mb-12">We've got answer</h2>
-			<Accordion :accordions="faqs" />
+			<h2 class="h2 text-center mb-12" v-scroll-reveal.reset>
+				We've got answer
+			</h2>
+			<Accordion :accordions="faqs" v-scroll-reveal.reset />
 		</div>
 	</section>
 </template>

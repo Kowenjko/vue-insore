@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import Button from '@/components/UI/Button.vue'
+import { createScrollRevealDirective } from 'vue-scroll-reveal'
+const vScrollReveal = createScrollRevealDirective({
+	origin: 'bottom',
+	distance: '100px',
+	delay: 300,
+	interval: 50,
+})
 </script>
 <template>
 	<section
@@ -10,7 +17,7 @@ import Button from '@/components/UI/Button.vue'
 		</div>
 		<div class="container mx-auto">
 			<div class="flex flex-col lg:flex-row lg:items-center lg:gap-x-14">
-				<div class="flex-1 z-10 text-center md:text-left">
+				<div class="flex-1 z-10 text-center md:text-left" v-scroll-reveal.reset>
 					<div
 						class="text-base uppercase text-white tracking-[2.24px] font-medium"
 					>
@@ -18,7 +25,7 @@ import Button from '@/components/UI/Button.vue'
 					</div>
 					<h1 class="h1 mb-4 !text-white">Subscribe us to get more updates</h1>
 				</div>
-				<form class="flex-1" @submit.prevent="">
+				<form class="flex-1" @submit.prevent="" v-scroll-reveal.reset>
 					<div class="flex flex-col md:flex-row relative gap-y-4">
 						<input
 							class="rounded-full w-full h-[66px] bg-transparent text-white border-2 border-white placeholder:text-white pl-8 outline-none"
