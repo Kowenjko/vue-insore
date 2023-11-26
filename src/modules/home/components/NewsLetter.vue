@@ -8,7 +8,7 @@ const { vScrollReveal } = useScrollReveal()
 		class="bg-accent md:h-[444px] py-12 flex items-center relative overflow-hidden"
 	>
 		<div class="absolute left-0 bottom-0">
-			<img src="/public/img/newsletter/pattern.svg" alt="pattern" />
+			<img src="/img/newsletter/pattern.svg" alt="pattern" />
 		</div>
 		<div class="container mx-auto">
 			<div class="flex flex-col lg:flex-row lg:items-center lg:gap-x-14">
